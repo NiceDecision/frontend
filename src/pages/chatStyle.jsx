@@ -63,6 +63,7 @@ export const ChatInput = styled.input`
   border: none;
   width: calc(100% - 4.8vw);
   height: 32px;
+  text-align: left; /* 왼쪽 정렬 강제 적용 */
   outline: none;
 `;
 export const SendButton = styled(IoSend)`
