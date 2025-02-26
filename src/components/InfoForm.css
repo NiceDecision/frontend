@@ -5,7 +5,6 @@
     height: 100vh;
     background-color: #f7f5f0;
   }
-  
   .form-box {
     background-color: #d9d0b9;
     padding: 20px;
@@ -19,6 +18,9 @@
     gap: 5px;
     margin-bottom: 10px;
   }
+  .time{
+    width: 150px;
+  }
   
   input {
     width: 50px;
@@ -27,7 +29,7 @@
     font-size: 16px;
   }
   
-  .gender-buttons {
+  .gender-buttons,.isLunar-buttons {
     display: flex;
     justify-content: center;
     gap: 10px;

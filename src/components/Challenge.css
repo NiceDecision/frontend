@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 80px;
+}
+
+.button-container {
+    display: flex;
+    align-items: center; /* 세로축 중앙 정렬 */
+    justify-content: center; /* 가로축 중앙 정렬 (필요에 따라 조정) */
+    gap: 10px; /* 버튼과 vs 사이의 간격 */
+  }
+  
+  .vs-text {
+    display: flex;
+    align-items: center; /* 텍스트 세로축 중앙 정렬 */
+    font-weight: bold;
+  }
+  
+
+.choice-button {
+    width: 360px;
+    height: 240px;
+    padding: 20px 40px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #dcd6c8;
+}
+
+.choice-button:hover {
+    background-color: #c4bcb0;
+}
+
+.choice-button.active {
+    background-color: #a89c89;
+    color: white;
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+    display: none; /* 기본적으로 숨김 */
+}
