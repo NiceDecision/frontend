@@ -7,6 +7,8 @@ export const Wrapper = styled.div`
   padding: 2vh 2vw 2vh 2vw;
   justify-content: space-between;
   height: clamp(64px, 4vh, 72px);
+  background-color: #f5f1ed;
+  top: 0px;
 `;
 export const Left = styled.div`
   display: flex;
