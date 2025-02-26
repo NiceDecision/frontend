@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f5f0;
+  }
+  
+  .form-box {
+    background-color: #d9d0b9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .input-group {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    width: 50px;
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .gender-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  button.selected {
+    background-color: black;
+    color: white;
+  }
+  
+  .submit-button {
+    background-color: #5a4a3c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
