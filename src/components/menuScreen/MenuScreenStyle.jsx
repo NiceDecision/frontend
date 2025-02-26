@@ -1,7 +1,17 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { MdOutlineCancel } from 'react-icons/md';
 
+const fadeIn = keyframes`
+from {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}
+`;
+
 export const Wrapper = styled.div`
+  animation: ${fadeIn} 0.4s ease-in;
   background-color: #dbd2bc80;
   display: flex;
   flex-direction: column;

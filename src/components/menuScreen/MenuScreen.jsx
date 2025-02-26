@@ -15,7 +15,7 @@ function MenuScreen({ isOpen, closeMenuScreen }) {
         <S.Text
           onClick={() => {
             nav('/chat');
-            closeMenuScreen();
+            window.location.reload();
           }}
         >
           서비스명과 채팅하기
@@ -23,7 +23,7 @@ function MenuScreen({ isOpen, closeMenuScreen }) {
         <S.Text
           onClick={() => {
             nav('/challenge');
-            closeMenuScreen();
+            window.location.reload();
           }}
         >
           도전! 결정 장애 극복!
@@ -31,7 +31,7 @@ function MenuScreen({ isOpen, closeMenuScreen }) {
         <S.Text
           onClick={() => {
             nav('/rank');
-            closeMenuScreen();
+            window.location.reload();
           }}
         >
           나의 결정 장애 극복 랭킹은?
