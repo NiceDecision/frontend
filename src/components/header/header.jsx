@@ -1,20 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './headerStyle';
 import HeaderTitile from './headerTitle';
-import { IoMenu } from 'react-icons/io5';
+import MenuScreen from '../menuScreen/MenuScreen';
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  function openMenuScreen() {
+    setIsOpen(true);
+  }
+  function closeMenuScreen() {
+    setIsOpen(false);
+  }
   return (
-    <S.Wrapper>
-      <S.Left>
-        <S.MbtiButton>MBTI</S.MbtiButton>
-        <S.Date>2025.02.26</S.Date>
-      </S.Left>
-      <HeaderTitile />
-      <S.MenuButton>
-        <IoMenu size={32} />
-      </S.MenuButton>
-    </S.Wrapper>
+    <>
+      <S.Wrapper>
+        <S.Left>
+          <S.MbtiButton>MBTI</S.MbtiButton>
+          <S.Date>2025.02.26</S.Date>
+        </S.Left>
+        <HeaderTitile />
+        <S.MenuButton onClick={openMenuScreen}>
+          <S.MenuButtonIcon />
+        </S.MenuButton>
+      </S.Wrapper>
+      {isOpen ? (
+        <MenuScreen isOpen={isOpen} closeMenuScreen={closeMenuScreen} />
+      ) : (
+        ''
+      )}
+    </>
   );
 }
 export default Header;
