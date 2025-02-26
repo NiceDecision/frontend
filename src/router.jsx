@@ -7,7 +7,7 @@ import BirthInfoForm from './pages/InfoForm';
 
 const router = createBrowserRouter([
   {
-    path: '/users',
+    path: '/',
     element: <App />,
   },
   {
