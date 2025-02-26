@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { IoMenu } from 'react-icons/io5';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -28,4 +29,13 @@ export const MbtiButton = styled.button`
   z-index: 2;
 `;
 export const Date = styled.div``;
-export const MenuButton = styled.div``;
+export const MenuButton = styled.div`
+  z-index: 2;
+`;
+
+export const MenuButtonIcon = styled(IoMenu)`
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  color: #a99985;
+`;
