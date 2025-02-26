@@ -1,12 +1,10 @@
-import './App.css';
-import BirthInfoForm from './components/InfoForm';
+import './App.css'; 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      </header>
-      <BirthInfoForm />
+      </header> 
     </div>
   );
 }
