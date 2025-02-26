@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   width: 96vw;
   padding: 2vh 2vw 2vh 2vw;
   justify-content: space-between;
+  height: clamp(64px, 4vh, 72px);
 `;
 export const Left = styled.div`
   display: flex;

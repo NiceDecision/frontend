@@ -18,8 +18,8 @@ export const LightBox = styled.div`
   background-color: #dbd2bc;
   width: 200px;
   height: 40px;
-  top: 12px;
   left: 12px;
+  top: 2vh;
   position: absolute;
   display: flex;
 `;
@@ -28,8 +28,8 @@ export const BrownBox = styled.div`
   position: absolute;
   width: 200px;
   height: 40px;
-  bottom: 12px;
   right: 12px;
+  top: 1vh;
 `;
 export const Text = styled.div`
   font-size: 32px;
