@@ -1,7 +1,17 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { IoSend } from 'react-icons/io5';
 
+const fadeIn = keyframes`
+from {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}
+`;
+
 export const Wrapper = styled.div`
+  animation: ${fadeIn} 0.4s ease-in-out;
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -17,8 +27,8 @@ export const ChatBody = styled.div`
   flex-direction: column;
   gap: 2vh;
   width: 100%;
-  max-height: 78vh;
-  padding-bottom: 2vh;
+  max-height: 76vh;
+  padding-bottom: 2.4vh;
   overflow: auto;
   &::-webkit-scrollbar {
     display: none;
