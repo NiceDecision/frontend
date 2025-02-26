@@ -1,5 +1,5 @@
 import './App.css';
-import BirthInfoForm from './components/InfoForm';
+import BirthInfoForm from './pages/InfoForm';
 
 function App() {
   return (
