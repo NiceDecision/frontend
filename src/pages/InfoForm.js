@@ -10,7 +10,7 @@ export default function BirthInfoForm() {
   const [gender, setGender] = useState(null);
 
   const handleSubmit = () => {
-    if (!isLunar) {
+    if (isLunar === null) {
       alert("양력/음력을 선택해주세요.");
       return;
     }
