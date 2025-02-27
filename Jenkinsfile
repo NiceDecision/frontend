@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    tools {
+        nodejs "node"
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -9,7 +11,17 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/NiceDecision/frontend.git'
             }
         }
-
+        stage('Build') {
+            steps {
+                withCredentials([
+                    string(credentialsId: 'REACT_APP_API_BASE_URL', variable: 'REACT_APP_API_BASE_URL'),
+                ])  {
+                    sh 'npm install'
+                    sh 'echo "REACT_APP_API_BASE_URL=${REACT_APP_API_BASE_URL}" > .env'
+                    sh 'npm run build'
+                }
+            }
+        }
         stage('Build Docker Image') {
             steps {
                 script {
@@ -21,18 +33,15 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-		withCredentials([
-                    string(credentialsId: 'REACT_APP_API_BASE_URL', variable: 'REACT_APP_API_BASE_URL'),
-                ]) {
-		    sh 'docker stop my-react-app || true'
+		        script {
+		            sh 'docker stop my-react-app || true'
                     sh 'docker rm my-react-app || true'
 
                     // 새 컨테이너 실행
                     sh '''
-		    docker run -d -p 80:80 \
-		      -e REACT_APP_API_BASE_URL=$REACT_APP_API_BASE_URL \
-		      --name my-react-app my-react-app
-		    '''
+		            docker run -d -p 80:80 \
+		            --name my-react-app my-react-app
+		            '''
                 }
             }
         }

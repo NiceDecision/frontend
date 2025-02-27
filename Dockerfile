@@ -1,11 +1,13 @@
-FROM node:16-alpine AS build
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
+FROM nginx:latest
 
-FROM nginx:stable-alpine
-COPY --from=build /app/build /usr/share/nginx/html
+# React 빌드 파일을 올바른 경로로 복사
+COPY ./build /usr/share/nginx/html
+
+# Nginx 설정 덮어쓰기
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
+
+# 80 포트 노출
 EXPOSE 80
+
+# Nginx 실행
 CMD ["nginx", "-g", "daemon off;"]
