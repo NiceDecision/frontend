@@ -52,7 +52,7 @@ function Chat() {
         { role: 'bot', message: '...' }, // 🔹 로딩 메시지 추가
       ]);
       fetchData(
-        '2025년 2월 28일 내 운세는 어때? 앞으로 쭉 MBTI 관련된 얘기는 절대 하지 말아줘'
+        '2025년 2월 28일 내 운세는 어때? 앞으로 절대 MBTI 얘기는 하지 마'
       );
     }
     localStorage.setItem('firstChat', false);
