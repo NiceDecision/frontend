@@ -39,16 +39,17 @@ export default function BirthInfoForm() {
 
   const fetchData = async () => {
     const requestData = {
+      birthYear: year,
       name: name,
-      year: year,
-      month: month,
-      date: date,
-      time: time,
+      birthMonth: month,
+      birthDate: date,
+      birthTime: time,
       isLunar: isLunar,
       gender: gender,
     };
+    console.log(process.env.REACT_APP_API_BASE_URL);
+    console.log(requestData);
     try {
-      console.log(process.env.REACT_APP_API_BASE_URL);
       const response = await api.post('/user', requestData);
       console.log(response.data);
       nav('/chat');
