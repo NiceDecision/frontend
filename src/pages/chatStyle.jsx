@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   width: 100vw;
   align-items: center;
+  height: 100vh;
 `;
 export const Container = styled.div`
   max-width: 1360px;
@@ -39,21 +40,20 @@ export const LeftChat = styled.div`
   left: 0;
   background-color: #dbd2bc;
   max-width: 100%;
-  width: 600px;
   width: max-content;
+  max-width: 600px;
   border-radius: 32px;
   overflow-wrap: break-word;
 `;
 export const RightChat = styled.div`
-  align-self: flex-end;
-  width: max-content;
   padding: 1vh 2vw;
-  right: 0px;
   background-color: #a99985;
   max-width: 100%;
-  width: 600px;
   border-radius: 32px;
   overflow-wrap: break-word;
+  align-self: flex-end;
+  width: max-content;
+  max-width: 600px;
 `;
 
 export const ChatInputContainer = styled.div`
@@ -61,9 +61,11 @@ export const ChatInputContainer = styled.div`
   width: 70vw;
   background-color: #dbd2bc;
   border-radius: 4vh;
+  bottom: 4vh;
+  position: absolute;
 `;
 export const ChatInputBar = styled.div`
-  margin-top: 2vh;
+  margin-bottom: 2vh;
   display: flex;
   align-items: center;
   margin: 0vh 1vw;

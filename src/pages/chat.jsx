@@ -112,6 +112,12 @@ function Chat() {
           </S.ChatInputBar>
         </S.ChatInputContainer>
       </S.Container>
+      <S.ChatInputContainer>
+        <S.ChatInputBar>
+          <S.ChatInput />
+          <S.SendButton />
+        </S.ChatInputBar>
+      </S.ChatInputContainer>
     </S.Wrapper>
   );
 }
