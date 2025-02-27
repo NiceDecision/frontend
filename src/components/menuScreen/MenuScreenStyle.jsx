@@ -35,6 +35,7 @@ export const Title = styled.div`
   font-weight: 700;
   margin-top: 32vh;
   z-index: 4;
+  font-size: 40px;
 `;
 export const List = styled.div`
   margin-top: 4vh;
@@ -47,6 +48,6 @@ export const List = styled.div`
   box-shadow: 0px 0px 64px 64px #dbd2bc;
 `;
 export const Text = styled.div`
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
 `;

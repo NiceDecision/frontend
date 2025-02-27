@@ -29,6 +29,7 @@
   }
   
   .rank-number, .rank-name, .rank-points {
+    font-size: 20px;
     font-weight: bold;
   }
 

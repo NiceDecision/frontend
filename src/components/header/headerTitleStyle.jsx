@@ -32,7 +32,8 @@ export const BrownBox = styled.div`
   top: 1vh;
 `;
 export const Text = styled.div`
-  font-size: 32px;
+  font-size: 40px;
   z-index: 1;
-  font-weight: 700;
+  font-weight: 900;
+  letter-spacing:4px;
 `;
