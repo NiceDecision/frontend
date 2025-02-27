@@ -1,0 +1,69 @@
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #b7a890;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+  }
+  
+  .popup-content {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    width: 100%;
+  }
+  
+  .option {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background: #f8f5f0;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .option.selected {
+    background: #5a4e3f;
+    color: white;
+  }
+  
+  .confirm {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #5a4e3f;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .confirm:disabled {
+    background: #beb6a9;
+    cursor: not-allowed;
+  }
+  
+  .close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: none; 
+    font-size: 16px;
+    cursor: pointer;
+    padding:8px 16px;
+  }
+  
