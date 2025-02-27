@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import './Popup.css';
+
+import React, { useState } from "react";
+import "./Popup.css";
+import * as S from '../menuScreen/MenuScreenStyle';
 
 const options = [
   ['E', 'I'],
@@ -61,11 +63,9 @@ const Popup = ({ onClose }) => {
           >
             확인
           </button>
-          <button className="close" onClick={onClose}>
-            X
-          </button>
-        </div>
+        <S.CancelButton onClick={onClose} />
       </div>
+    </div>
     </div>
   );
 };

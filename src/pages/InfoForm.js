@@ -14,12 +14,12 @@ export default function BirthInfoForm() {
   const [name, setName] = useState('');
 
   const handleSubmit = () => {
-    if (isLunar === null) {
-      alert('양력/음력을 선택해주세요.');
-      return;
-    }
     if (!year || !month || !date) {
       alert('생년월일을 입력해주세요.');
+      return;
+    }
+    if (isLunar === null) {
+      alert('양력/음력을 선택해주세요.');
       return;
     }
     if (!time) {

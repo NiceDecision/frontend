@@ -3,7 +3,7 @@ import "./Challenge.css";
 import Header from "../components/header/customHeader";
 
 const ChoicePage = () => {
-  const [questCount, setQuestCount] = useState(1);
+  const [questCount, setQuestCount] = useState(0);
   const [showToast, setShowToast] = useState(false);
   const [choices, setChoices] = useState({ option1: "로딩 중...", option2: "로딩 중..." });
 
