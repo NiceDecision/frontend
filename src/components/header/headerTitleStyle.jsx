@@ -35,5 +35,6 @@ export const Text = styled.div`
   font-size: 40px;
   z-index: 1;
   font-weight: 900;
-  letter-spacing:4px;
+  letter-spacing: 4px;
+  line-height: 40px;
 `;

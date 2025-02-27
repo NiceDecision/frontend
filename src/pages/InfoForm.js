@@ -49,7 +49,8 @@ export default function BirthInfoForm() {
     };
     try {
       const response = await api.post('/user', requestData);
-      console.log(response.data);
+      console.log(response.data.userId);
+      localStorage.setItem('userId', response.data.userId);
       nav('/chat');
     } catch (e) {
       console.log(e);

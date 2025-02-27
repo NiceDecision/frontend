@@ -17,6 +17,9 @@ function Header() {
   function openMbtiPopup() {
     setShowPopup(true);
   }
+  function closeMbtiPopup() {
+    setShowPopup(false);
+  }
   const today = new Date().toLocaleDateString('ko-KR', {
     year: 'numeric',
     month: '2-digit',
@@ -27,7 +30,7 @@ function Header() {
     <>
       <S.Wrapper>
         <S.Left>
-          <S.MbtiButton onClick={openMbtiPopup}>MBTI</S.MbtiButton>
+          <S.MbtiButton onClick={openMbtiPopup}>MBTI 선택</S.MbtiButton>
           <S.Date>{today}</S.Date>
         </S.Left>
         <HeaderTitile />
@@ -40,7 +43,11 @@ function Header() {
       ) : (
         ''
       )}
-      {showPopup && <Popup onClose={() => setShowPopup(false)} />}
+      {showPopup ? (
+        <Popup showPopup={showPopup} closeMbtiPopup={closeMbtiPopup} />
+      ) : (
+        ''
+      )}
     </>
   );
 }
