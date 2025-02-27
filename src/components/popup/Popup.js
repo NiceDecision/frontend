@@ -32,6 +32,7 @@ const Popup = ({ closeMbtiPopup }) => {
     <div className="popup-wrapper">
       <div className="popup">
         <div className="popup-content">
+          <p>딱대봇의 성격을 정해주세요.</p>
           {options.map((row, rowIndex) => (
             <div key={rowIndex} className="row">
               {row.map((option) => (
