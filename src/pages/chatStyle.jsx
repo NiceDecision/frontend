@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import { IoSend } from 'react-icons/io5';
 
 const fadeIn = keyframes`
@@ -35,8 +35,13 @@ export const ChatBody = styled.div`
     display: none;
   }
 `;
+const gradientAnimation = keyframes`
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+`;
 export const LeftChat = styled.div`
-  padding: 1vh 2vw;
+  padding: 0vh 2vw;
   left: 0;
   background-color: #dbd2bc;
   max-width: 100%;
@@ -44,9 +49,21 @@ export const LeftChat = styled.div`
   max-width: 600px;
   border-radius: 32px;
   overflow-wrap: break-word;
+  background: ${({ isLoading }) =>
+    isLoading
+      ? 'linear-gradient(90deg, #A99985, #dbd2bc, #DBD2BC)'
+      : '#dbd2bc'};
+  background-size: 200% 200%;
+  transition: background 0.3s ease;
+
+  ${({ isLoading }) =>
+    isLoading &&
+    css`
+      animation: ${gradientAnimation} 2s linear infinite;
+    `}
 `;
 export const RightChat = styled.div`
-  padding: 1vh 2vw;
+  padding: 0vh 2vw;
   background-color: #a99985;
   max-width: 100%;
   border-radius: 32px;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './InfoForm.css';
 import { useNavigate } from 'react-router-dom';
-import {api} from '../api/axios';
+import { api } from '../api/axios';
 
 export default function BirthInfoForm() {
   const nav = useNavigate();
@@ -73,6 +73,7 @@ export default function BirthInfoForm() {
   }
 
   localStorage.clear();
+  localStorage.setItem('firstChat', true);
 
   return (
     <div className="info-container">
