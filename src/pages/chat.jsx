@@ -7,7 +7,6 @@ function Chat() {
   const [messages, setMessages] = useState([]);
   const [question, setQuestion] = useState('');
   const chatBodyRef = useRef(null);
-  const gpt_mbti = localStorage.getItem('gpt_mbti');
 
   useEffect(() => {
     if (chatBodyRef.current) {
@@ -24,8 +23,9 @@ function Chat() {
     const requestData = {
       userId: parseInt(localStorage.getItem('userId')),
       question: userQuestion,
-      MBTI: gpt_mbti,
+      MBTI: localStorage.getItem('gpt_mbti'),
     };
+    console.log(requestData);
     try {
       const response = await api.post('/chat/question', requestData);
       const cleanedMessage = cleanResponse(response.data); // ✅ 문자 정리
