@@ -1,11 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&family=Nanum+Gothic&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-.ibm-plex-sans-kr-light {
-  font-family: "IBM Plex Sans KR", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-.container {
-  font-family: "IBM Plex Sans KR", sans-serif;
+
+.container { 
   font-weight: 300;
   font-style: normal;
     display: flex;
