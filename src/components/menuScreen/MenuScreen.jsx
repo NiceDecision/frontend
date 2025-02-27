@@ -18,30 +18,32 @@ function MenuScreen({ isOpen, closeMenuScreen }) {
   return (
     <S.Wrapper>
       <S.CancelButton onClick={closeMenuScreen} />
-      <S.Title>MENU</S.Title>
-      <S.List>
-        <S.Text
-          onClick={() => {
-            selectPage('/chat');
-          }}
-        >
-          딱대봇과 채팅하기
-        </S.Text>
-        <S.Text
-          onClick={() => {
-            selectPage('/challenge');
-          }}
-        >
-          도전! 결정 장애 극복!
-        </S.Text>
-        <S.Text
-          onClick={() => {
-            selectPage('/rank');
-          }}
-        >
-          나의 결정 장애 극복 랭킹은?
-        </S.Text>
-      </S.List>
+      <S.Container>
+        <S.Title>MENU</S.Title>
+        <S.List>
+          <S.Text
+            onClick={() => {
+              selectPage('/chat');
+            }}
+          >
+            딱대봇과 채팅하기
+          </S.Text>
+          <S.Text
+            onClick={() => {
+              selectPage('/challenge');
+            }}
+          >
+            도전! 결정 장애 극복!
+          </S.Text>
+          <S.Text
+            onClick={() => {
+              selectPage('/rank');
+            }}
+          >
+            나의 결정 장애 극복 랭킹은?
+          </S.Text>
+        </S.List>
+      </S.Container>
     </S.Wrapper>
   );
 }

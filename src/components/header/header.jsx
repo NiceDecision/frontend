@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as S from './headerStyle';
 import HeaderTitile from './headerTitle';
 import MenuScreen from '../menuScreen/MenuScreen';
-import Popup from "../popup/Popup";
+import Popup from '../popup/Popup';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,13 +16,19 @@ function Header() {
   }
   function openMbtiPopup() {
     setShowPopup(true);
-  } 
+  }
+  const today = new Date().toLocaleDateString('ko-KR', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  });
+
   return (
     <>
       <S.Wrapper>
         <S.Left>
           <S.MbtiButton onClick={openMbtiPopup}>MBTI</S.MbtiButton>
-          <S.Date>2025.02.26</S.Date>
+          <S.Date>{today}</S.Date>
         </S.Left>
         <HeaderTitile />
         <S.MenuButton onClick={openMenuScreen}>
@@ -33,8 +39,8 @@ function Header() {
         <MenuScreen isOpen={isOpen} closeMenuScreen={closeMenuScreen} />
       ) : (
         ''
-      )} 
-      {showPopup && <Popup onClose={() => setShowPopup(false)} />} 
+      )}
+      {showPopup && <Popup onClose={() => setShowPopup(false)} />}
     </>
   );
 }
