@@ -15,20 +15,24 @@ function Chat() {
     }
   }, [messages]);
 
+  const cleanResponse = (text) => {
+    return text.replace(/[@#$%^&*()_+=\-[\]{};':"\\|<>/`]/g, ''); // ❌ 제외할 문자 목록
+  };
+
   // GPT 응답 가져오기
   const fetchData = async (userQuestion) => {
     const requestData = {
-      userId: localStorage.getItem('userId'),
+      userId: parseInt(localStorage.getItem('userId')),
       question: userQuestion,
-      gpt_mbti: gpt_mbti,
+      MBTI: gpt_mbti,
     };
-
-    console.log(requestData);
     try {
       const response = await api.post('/chat/question', requestData);
+      const cleanedMessage = cleanResponse(response.data); // ✅ 문자 정리
+
       setMessages((prevArr) => [
         ...prevArr,
-        { role: 'bot', message: response },
+        { role: 'bot', message: cleanedMessage },
       ]);
     } catch (e) {
       console.log(e);
