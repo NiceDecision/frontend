@@ -19,14 +19,7 @@ function Chat() {
           <S.LeftChat>asdfadsfasf</S.LeftChat>
           <S.RightChat>asdfadsfasdfasdf</S.RightChat>
           <S.LeftChat>asdfadsfasf</S.LeftChat>
-          <S.RightChat>asdfadsfasdfasdf</S.RightChat>
-          <S.LeftChat>asdfadsfasf</S.LeftChat>
-          <S.RightChat>
-            asdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdf
-          </S.RightChat>
-          <S.LeftChat>asdfadsfasf</S.LeftChat>
-          <S.RightChat>asdfadsfasdfasdf</S.RightChat>
-          <S.LeftChat>asdfadsfasf</S.LeftChat>
+
           <S.RightChat>asdfadsfasdfasdf</S.RightChat>
           <S.LeftChat>asdfadsfasf</S.LeftChat>
           <S.RightChat>
@@ -37,13 +30,13 @@ function Chat() {
             asdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdfasdfadsfasdfasdf
           </S.RightChat>
         </S.ChatBody>
-        <S.ChatInputContainer>
-          <S.ChatInputBar>
-            <S.ChatInput />
-            <S.SendButton />
-          </S.ChatInputBar>
-        </S.ChatInputContainer>
       </S.Container>
+      <S.ChatInputContainer>
+        <S.ChatInputBar>
+          <S.ChatInput />
+          <S.SendButton />
+        </S.ChatInputBar>
+      </S.ChatInputContainer>
     </S.Wrapper>
   );
 }
