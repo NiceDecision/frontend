@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as S from './chatStyle';
 import Header from '../components/header/header';
-import api from '../api/axios';
+import {api} from '../api/axios';
 
 function Chat() {
   const [messages, setMessages] = useState([]);

@@ -9,4 +9,11 @@ const api = axios.create({
   withCredentials: true,
 });
 
-export default api;
+const aiApiClient = axios.create({
+  baseURL: process.env.AI_API_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+export {api, aiApiClient};
