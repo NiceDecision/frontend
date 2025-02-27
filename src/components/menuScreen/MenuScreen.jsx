@@ -5,6 +5,14 @@ import { useNavigate } from 'react-router-dom';
 function MenuScreen({ isOpen, closeMenuScreen }) {
   const nav = useNavigate();
 
+  function selectPage(link) {
+    if (window.location.href.includes(link)) {
+      closeMenuScreen();
+    } else {
+      nav(link);
+    }
+  }
+
   if (!isOpen) return null; // isOpen이 false면 렌더링 안 함
 
   return (
@@ -14,24 +22,21 @@ function MenuScreen({ isOpen, closeMenuScreen }) {
       <S.List>
         <S.Text
           onClick={() => {
-            nav('/chat');
-            window.location.reload();
+            selectPage('/chat');
           }}
         >
           서비스명과 채팅하기
         </S.Text>
         <S.Text
           onClick={() => {
-            nav('/challenge');
-            window.location.reload();
+            selectPage('/challenge');
           }}
         >
           도전! 결정 장애 극복!
         </S.Text>
         <S.Text
           onClick={() => {
-            nav('/rank');
-            window.location.reload();
+            selectPage('/rank');
           }}
         >
           나의 결정 장애 극복 랭킹은?
