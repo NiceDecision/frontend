@@ -56,8 +56,6 @@ export default function BirthInfoForm() {
       console.log(e);
     }
   };
-  localStorage.clear(); // ✅ localStorage 전체 삭제
-  localStorage.removeItem('gpt_mbti'); // ✅ 특정 키 삭제
 
   function controlLunar(value) {
     if (isLunar === value) {
@@ -73,6 +71,8 @@ export default function BirthInfoForm() {
       setGender(value);
     }
   }
+
+  localStorage.clear();
 
   return (
     <div className="info-container">
