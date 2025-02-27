@@ -1,6 +1,5 @@
-
-import React, { useState } from "react";
-import "./Popup.css";
+import React, { useState } from 'react';
+import './Popup.css';
 import * as S from '../menuScreen/MenuScreenStyle';
 
 const options = [
@@ -10,7 +9,7 @@ const options = [
   ['J', 'P'],
 ];
 
-const Popup = ({ onClose }) => {
+const Popup = ({ closeMbtiPopup }) => {
   const [selected, setSelected] = useState(['', '', '', '']);
 
   const handleSelect = (rowIndex, value) => {
@@ -23,18 +22,10 @@ const Popup = ({ onClose }) => {
 
   const handleConfirm = () => {
     if (!isComplete) return;
-
-    fetch('/chat/mbti', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ result: selected.join('') }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log('Success:', data);
-        onClose();
-      })
-      .catch((error) => console.error('Error:', error));
+    const mbti = selected.join('');
+    console.log(mbti);
+    localStorage.setItem('gpt_mbti', mbti);
+    closeMbtiPopup();
   };
 
   return (
@@ -63,9 +54,9 @@ const Popup = ({ onClose }) => {
           >
             확인
           </button>
-        <S.CancelButton onClick={onClose} />
+          <S.CancelButton onClick={closeMbtiPopup} />
+        </div>
       </div>
-    </div>
     </div>
   );
 };

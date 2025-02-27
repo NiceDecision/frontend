@@ -80,9 +80,23 @@ export const ChatInput = styled.input`
   text-align: left; /* 왼쪽 정렬 강제 적용 */
   outline: none;
 `;
-export const SendButton = styled(IoSend)`
+export const SendButton = styled.button`
   cursor: pointer;
   background-color: #a99985;
-  padding: 0.4vh 0.4vh;
+  padding: 0.8vh 1vh;
   border-radius: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    transform: scale(0.92);
+    transition: transform 0.2s ease;
+  }
+`;
+
+export const SendIcon = styled(IoSend)`
+  font-size: 1.2rem;
+  color: #f5f1ed;
 `;
