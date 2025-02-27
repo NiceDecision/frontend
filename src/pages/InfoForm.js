@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './InfoForm.css';
 import { useNavigate } from 'react-router-dom';
+import api from '../api/axios';
 
 export default function BirthInfoForm() {
   const nav = useNavigate();
@@ -10,6 +11,7 @@ export default function BirthInfoForm() {
   const [time, settime] = useState('');
   const [isLunar, setisLunar] = useState(null);
   const [gender, setGender] = useState(null);
+  const [name, setName] = useState('');
 
   const handleSubmit = () => {
     if (isLunar === null) {
@@ -28,27 +30,31 @@ export default function BirthInfoForm() {
       alert('성별을 선택해주세요.');
       return;
     }
+    if (!name) {
+      alert('이름을 입력해 주세요.');
+      return;
+    }
+    fetchData();
+  };
 
-    const userData = {
-      isLunar,
-      year,
-      month,
-      date,
-      time,
-      gender,
+  const fetchData = async () => {
+    const requestData = {
+      name: name,
+      year: year,
+      month: month,
+      date: date,
+      time: time,
+      isLunar: isLunar,
+      gender: gender,
     };
-
-    fetch('/user', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log('Success:', data))
-      .catch((error) => console.error('Error:', error))
-      .finally(() => nav('/chat'));
+    try {
+      console.log(process.env.REACT_APP_API_BASE_URL);
+      const response = await api.post('/user', requestData);
+      console.log(response.data);
+      nav('/chat');
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   function controlLunar(value) {
@@ -69,6 +75,16 @@ export default function BirthInfoForm() {
   return (
     <div className="container">
       <div className="form-box">
+        <p>이름을 입력해 주세요.</p>
+        <input
+          type="text"
+          className="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="이름"
+        />
+        <hr className="line" />
+
         <p>생년월일을 선택해주세요.</p>
         <div className="input-group">
           <div className="input-gap">
