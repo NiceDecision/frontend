@@ -47,8 +47,6 @@ export default function BirthInfoForm() {
       isLunar: isLunar,
       gender: gender,
     };
-    console.log(process.env.REACT_APP_API_BASE_URL);
-    console.log(requestData);
     try {
       const response = await api.post('/user', requestData);
       console.log(response.data);
@@ -74,7 +72,7 @@ export default function BirthInfoForm() {
   }
 
   return (
-    <div className="container">
+    <div className="info-container">
       <div className="form-box">
         <p>이름을 입력해 주세요.</p>
         <input

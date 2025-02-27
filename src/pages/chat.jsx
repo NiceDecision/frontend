@@ -9,7 +9,8 @@ function Chat() {
     if (chatBodyRef.current) {
       chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
     }
-  }, []); // 컴포넌트 마운트 시 실행 (새로고침 포함)
+  }, []);
+
   return (
     <S.Wrapper>
       <Header />

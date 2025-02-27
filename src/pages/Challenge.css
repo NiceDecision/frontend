@@ -1,13 +1,11 @@
-
-.container { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 40vh;
-    background-color: #f5f1ed; 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f1ed;
+  height: 80vh;
 }
-
 .title {
   font-size: 1.5rem;
   font-weight: bold;
