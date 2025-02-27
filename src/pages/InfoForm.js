@@ -36,7 +36,7 @@ export default function BirthInfoForm() {
       gender,
     };
     
-    fetch("/user", {
+    fetch("/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

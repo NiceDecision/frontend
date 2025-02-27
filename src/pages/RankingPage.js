@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 import "./RankingPage.css";
+import Header from "../components/header/customHeader";
 
 const RankingPage = () => {
   const [rankings, setRankings] = useState([]);
 
   useEffect(() => {
-    fetch("/ranking") // Node.js에서 데이터를 제공하는 엔드포인트-> 추후 확정
+    fetch("/mission/rank") 
       .then((response) => response.json())
       .then((data) => setRankings(data.data.rankedList))
       .catch((error) => console.error("Error fetching rankings:", error));
   }, []);
 
   return (
+    <>
+    <Header />
     <div className="ranking-container">
       <h1 className="ranking-title">2025년 2월 결정장애 극복 랭킹</h1>
       <div className="ranking-list">
@@ -24,6 +27,7 @@ const RankingPage = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 
