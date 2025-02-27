@@ -38,7 +38,8 @@ export const LeftChat = styled.div`
   padding: 1vh 2vw;
   left: 0;
   background-color: #dbd2bc;
-  max-width: 600px;
+  max-width: 100%;
+  width: 600px;
   width: max-content;
   border-radius: 32px;
   overflow-wrap: break-word;
@@ -49,7 +50,8 @@ export const RightChat = styled.div`
   padding: 1vh 2vw;
   right: 0px;
   background-color: #a99985;
-  max-width: 600px;
+  max-width: 100%;
+  width: 600px;
   border-radius: 32px;
   overflow-wrap: break-word;
 `;
