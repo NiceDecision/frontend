@@ -21,13 +21,18 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-                script {
-                    // 혹시 이전에 실행 중인 컨테이너가 있으면 중단 및 제거
-                    sh 'docker stop my-react-app || true'
+		withCredentials([
+                    string(credentialsId: 'REACT_APP_API_BASE_URL', variable: 'REACT_APP_API_BASE_URL'),
+                ]) {
+		    sh 'docker stop my-react-app || true'
                     sh 'docker rm my-react-app || true'
 
                     // 새 컨테이너 실행
-                    sh 'docker run -d -p 80:80 --name my-react-app my-react-app'
+                    sh '''
+		    docker run -d -p 80:80 \
+		      -e REACT_APP_API_BASE_URL=$REACT_APP_API_BASE_URL \
+		      --name my-react-app my-react-app
+		    '''
                 }
             }
         }
