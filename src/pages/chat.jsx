@@ -60,7 +60,7 @@ function Chat() {
 
   useEffect(() => {
     printfirstChat();
-  }, []);
+  });
 
   const [isSending, setIsSending] = useState(false); // 🔹 전송 중 여부 상태 추가
 
