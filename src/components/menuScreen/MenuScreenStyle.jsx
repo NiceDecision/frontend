@@ -45,7 +45,7 @@ export const List = styled.div`
   gap: 8vh;
   align-items: center;
   background-color: #dbd2bc;
-  box-shadow: 0px 0px 3vh 4vw #dbd2bc;
+  box-shadow: 0px 0px 5vh 12vw #dbd2bc;
 `;
 export const Text = styled.div`
   font-size: 20px;
