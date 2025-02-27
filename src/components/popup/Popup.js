@@ -22,9 +22,9 @@ const Popup = ({ closeMbtiPopup }) => {
 
   const handleConfirm = () => {
     if (!isComplete) return;
-    const mbti = selected.join('');
-    console.log(mbti);
-    localStorage.setItem('gpt_mbti', mbti);
+    const MBTI = selected.join('');
+    console.log(MBTI);
+    localStorage.setItem('MBTI', MBTI);
     closeMbtiPopup();
   };
 

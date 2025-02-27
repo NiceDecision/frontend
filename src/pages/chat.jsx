@@ -15,7 +15,7 @@ function Chat() {
   }, [messages]);
 
   const cleanResponse = (text) => {
-    return text.replace(/[@#$%^&*()_+=\-[\]{};':"\\|<>/`]/g, ''); // ❌ 제외할 문자 목록
+    return text.replace(/[a-z@#$%^&*()_+=\-[\]{};':"\\|<>/`]/g, '');
   };
 
   // GPT 응답 가져오기
@@ -23,13 +23,13 @@ function Chat() {
     const requestData = {
       userId: parseInt(localStorage.getItem('userId')),
       question: userQuestion,
-      MBTI: localStorage.getItem('gpt_mbti'),
+      MBTI: localStorage.getItem('MBTI'),
     };
     console.log(requestData);
     try {
       const response = await api.post('/chat/question', requestData);
-      const cleanedMessage = cleanResponse(response.data); // ✅ 문자 정리
-
+      const cleanedMessage = cleanResponse(response.data);
+      console.log(response.data);
       setMessages((prevArr) => [
         ...prevArr,
         { role: 'bot', message: cleanedMessage },
