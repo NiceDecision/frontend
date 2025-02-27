@@ -12,25 +12,30 @@ const ChoicePage = () => {
   // fastAPI에서 5개의 "A vs B" 데이터를 가져와서 가공
   const fetchChoices = async () => {
     try {
-      const response = await aiApiClient.get("/ai/choice"); // 5개 데이터 받아오기
+      const response = await aiApiClient.get("/ai-api/ai/choice"); // 데이터 가져오기
       console.log("data:", JSON.stringify(response.data, null, 2));
-
-      if (Array.isArray(response.data) && response.data.length >= 5) {
+  
+      // 객체 데이터를 배열로 변환
+      const dataObject = response.data;
+      const dataArray = Object.values(dataObject); // 객체의 값들을 배열로 변환
+  
+      if (Array.isArray(dataArray) && dataArray.length >= 5) {
         // "A vs B" 형식의 데이터를 { option1: "A", option2: "B" } 형식으로 변환
-        const formattedChoices = response.data.map(item => {
+        const formattedChoices = dataArray.map(item => {
           const [option1, option2] = item.split(" vs ");
           return { option1, option2 };
         });
-
+  
         setChoices(formattedChoices); // 전체 데이터 저장
         setCurrentChoice(formattedChoices[0]); // 첫 번째 선택지 표시
       } else {
-        console.error("올바른 데이터 형식이 아님:", response.data);
+        console.error("올바른 데이터 형식이 아님:", dataArray);
       }
     } catch (error) {
       console.error("데이터를 가져오는 중 오류 발생:", error);
     }
   };
+  
 
   useEffect(() => {
     fetchChoices(); // 컴포넌트가 처음 렌더링될 때 데이터 불러오기
