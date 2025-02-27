@@ -20,6 +20,7 @@ export const Wrapper = styled.div`
   position: fixed;
   align-items: center;
   z-index: 3;
+  top : 0;
 `;
 export const CancelButton = styled(MdOutlineCancel)`
   width: 32px;

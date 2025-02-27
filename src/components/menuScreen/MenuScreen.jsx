@@ -25,7 +25,7 @@ function MenuScreen({ isOpen, closeMenuScreen }) {
             selectPage('/chat');
           }}
         >
-          서비스명과 채팅하기
+          딱대봇과 채팅하기
         </S.Text>
         <S.Text
           onClick={() => {
