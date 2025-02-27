@@ -10,10 +10,10 @@ const api = axios.create({
 });
 
 const aiApiClient = axios.create({
-  baseURL: process.env.AI_API_BASE_URL,
+  baseURL: process.env.REACT_APP_AI_API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-export {api, aiApiClient};
+export { api, aiApiClient };
