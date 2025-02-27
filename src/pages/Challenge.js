@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Challenge.css";
 import Header from "../components/header/customHeader";
 
@@ -10,11 +11,7 @@ const ChoicePage = () => {
   // 서버에서 양자택일 데이터를 가져오기
   const fetchChoices = async () => {
     try {
-      const response = await fetch("/mission");
-      if (!response.ok) {
-        throw new Error("데이터를 불러오는 데 실패했습니다.");
-      }
-      const data = await response.json();
+      const { data } = await axios.get("/mission");
       setChoices(data);
     } catch (error) {
       console.error("데이터를 가져오는 중 오류 발생:", error);
@@ -24,17 +21,13 @@ const ChoicePage = () => {
   // 서버에서 기존 questCount 값을 가져오는 함수 추가 (GET 요청)
   const fetchQuestCount = async () => {
     try {
-      const response = await fetch("/challenge"); // GET 방식 요청
-      if (!response.ok) {
-        throw new Error("questCount 데이터를 불러오는 데 실패했습니다.");
-      }
-      const data = await response.json();
-      // 예: 서버 응답이 { questCount: 3 } 형태라고 가정
-      setQuestCount(data.questCount);
+      const { data } = await axios.get("/mission"); // GET 방식 요청
+      setQuestCount(data.questCount); // 예: 서버 응답이 { questCount: 3 } 형태라고 가정
     } catch (error) {
       console.error("questCount 데이터를 가져오는 중 오류 발생:", error);
     }
   };
+
   useEffect(() => {
     fetchChoices();
     fetchQuestCount();
@@ -50,20 +43,10 @@ const ChoicePage = () => {
   const handleClick = async () => {
     if (questCount >= 5) return;
     try {
-      const newCount = questCount + 1;
-      setQuestCount(newCount);
+      const missionCnt = questCount + 1;
+      setQuestCount(missionCnt);
 
-      const response = await fetch("/challenge", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ newCount }),
-      });
-
-      if (!response.ok) {
-        throw new Error("서버 응답이 올바르지 않습니다.");
-      }
+      await axios.post("/mission", { missionCnt });
 
       fetchChoices();
     } catch (error) {
