@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./RankingPage.css";
 import Header from "../components/header/customHeader";
-import api from '../api/axios';
+import {api} from '../api/axios';
 
 export default function RankingPage() {
   const [rankings, setRankings] = useState([]);
